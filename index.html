@@ -60,10 +60,9 @@ body {
   from { opacity: 0; transform: scale(0.94); }
   to   { opacity: 1; transform: scale(1); }
 }
-@keyframes countUp { from { opacity: 0; } to { opacity: 1; } }
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-10px); }
+  50%        { transform: translateY(-10px); }
 }
 @keyframes pulse-ring {
   0%   { transform: scale(1); opacity: 0.6; }
@@ -436,37 +435,6 @@ body {
 .card-text-wrap {}
 .card-label { font-size: 10px; color: var(--gray-400); margin-bottom: 1px; }
 .card-value { font-size: 14px; font-weight: 700; color: var(--gray-900); }
-.hero-scroll-hint {
-  position: absolute;
-  bottom: 32px; left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  font-size: 10px;
-  color: var(--gray-400);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.scroll-line {
-  width: 1px; height: 40px;
-  background: linear-gradient(to bottom, var(--gray-200), transparent);
-  position: relative;
-  overflow: hidden;
-}
-.scroll-line::after {
-  content: '';
-  position: absolute;
-  top: -100%; left: 0;
-  width: 100%; height: 50%;
-  background: var(--green);
-  animation: scrollDrop 1.8s ease-in-out infinite;
-}
-@keyframes scrollDrop {
-  0% { top: -50%; }
-  100% { top: 150%; }
-}
 
 /* ── MARQUEE ── */
 .marquee-section {
@@ -601,34 +569,50 @@ body {
 }
 .about-badge {
   position: absolute;
-  bottom: -24px; right: -24px;
-  width: 120px; height: 120px;
-  background: var(--green);
+  bottom: -30px; 
+  right: -30px;
+  width: 130px; 
+  height: 130px;
+  background: linear-gradient(135deg, var(--green), var(--green-dark));
   border-radius: 50%;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
   color: var(--white);
   text-align: center;
-  box-shadow: var(--shadow-lg);
-  animation: spin-slow 20s linear infinite;
-}
-.about-badge-inner {
-  position: absolute;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  animation: spin-slow 20s linear infinite reverse;
-}
-.about-badge-year {
-  font-size: 22px; font-weight: 700; line-height: 1;
-}
-.about-badge-text {
-  font-size: 8px; opacity: 0.8; letter-spacing: 1px;
-  text-transform: uppercase;
+  box-shadow: 0 12px 32px rgba(15, 45, 30, 0.4);
+  animation: float 4s ease-in-out infinite;
+  border: 4px solid var(--white);
 }
 .about-badge-ring {
-  width: 100%; height: 100%;
-  border: 1.5px dashed rgba(255,255,255,0.4);
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed var(--gold);
   border-radius: 50%;
+  animation: spin-slow 15s linear infinite;
+}
+.about-badge-inner {
+  position: relative;
+  z-index: 2;
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+}
+.about-badge-year {
+  font-size: 26px; 
+  font-weight: 700; 
+  line-height: 1;
+  color: var(--gold-light);
+  margin-bottom: 2px;
+}
+.about-badge-text {
+  font-size: 9px; 
+  opacity: 0.9; 
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 .visi-block {
   background: var(--green-xlight);
@@ -804,11 +788,7 @@ body {
   background: var(--white);
 }
 .programs-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   margin-bottom: 56px;
-  gap: 32px;
 }
 .programs-grid {
   display: grid;
@@ -1498,7 +1478,6 @@ body {
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
@@ -1536,7 +1515,6 @@ body {
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="beranda">
   <div class="hero-bg-shape"></div>
   <div class="hero-left">
@@ -1593,13 +1571,8 @@ body {
       </div>
     </div>
   </div>
-  <div class="hero-scroll-hint">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee-section" aria-hidden="true">
   <div class="marquee-track">
     <div class="marquee-item"><span class="marquee-dot"></span>Tahfidz Al-Qur'an 30 Juz</div>
@@ -1621,7 +1594,6 @@ body {
   </div>
 </div>
 
-<!-- STATS -->
 <section class="stats-section">
   <div class="stats-grid">
     <div class="stat-card reveal">
@@ -1643,7 +1615,6 @@ body {
   </div>
 </section>
 
-<!-- PROFIL -->
 <section class="section" id="profil">
   <div class="section-inner">
     <div class="about-grid">
@@ -1681,7 +1652,6 @@ body {
   </div>
 </section>
 
-<!-- PENGASUH -->
 <section class="pengasuh-section" id="pengasuh">
   <div class="pengasuh-inner">
     <div class="reveal">
@@ -1717,7 +1687,6 @@ body {
   </div>
 </section>
 
-<!-- PROGRAM -->
 <section class="section programs-section" id="program">
   <div class="section-inner">
     <div class="programs-header">
@@ -1725,7 +1694,6 @@ body {
         <p class="section-label">Program Kami</p>
         <h2 class="section-title">Program<br><em>Unggulan</em></h2>
       </div>
-      <p class="section-body reveal delay-2" style="max-width:360px">Rangkaian program terstruktur untuk membentuk generasi hafidz yang berilmu dan berakhlak mulia.</p>
     </div>
     <div class="programs-grid">
       <div class="prog-card reveal delay-1">
@@ -1768,7 +1736,6 @@ body {
   </div>
 </section>
 
-<!-- GALLERY -->
 <section class="section gallery-section" id="kegiatan">
   <div class="section-inner">
     <div class="gallery-header reveal">
@@ -1790,7 +1757,6 @@ body {
   </div>
 </section>
 
-<!-- FASILITAS -->
 <section class="section fac-section" id="fasilitas">
   <div class="section-inner">
     <div style="text-align:center;margin-bottom:48px" class="reveal">
@@ -1840,7 +1806,6 @@ body {
   </div>
 </section>
 
-<!-- SANTRI -->
 <section class="section santri-section" id="santri">
   <div class="section-inner">
     <div style="text-align:center;margin-bottom:48px" class="reveal">
@@ -1869,7 +1834,6 @@ body {
   </div>
 </section>
 
-<!-- QRIS MODAL -->
 <div class="modal-overlay" id="qrisModal" onclick="closeQris(event)">
   <div class="modal-box">
     <button class="modal-close" onclick="closeQris(null, true)">✕</button>
@@ -1881,7 +1845,6 @@ body {
   </div>
 </div>
 
-<!-- BIAYA -->
 <section class="section biaya-section" id="biaya">
   <div class="section-inner">
     <div class="biaya-header reveal">
@@ -1930,7 +1893,6 @@ body {
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner reveal">
     <div class="cta-badge">Penerimaan Santri Baru</div>
@@ -1940,7 +1902,6 @@ body {
   </div>
 </section>
 
-<!-- KONTAK -->
 <section class="section kontak-section" id="kontak">
   <div class="section-inner">
     <div style="text-align:center;margin-bottom:48px" class="reveal">
@@ -1992,7 +1953,6 @@ body {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-top">
@@ -2042,7 +2002,6 @@ body {
   </div>
 </footer>
 
-<!-- WA FLOAT -->
 <a href="https://wa.me/6282257508018" target="_blank" class="wa-float" id="waFloat" title="Chat WhatsApp">
   <div class="pulse"></div>
   <i class="fab fa-whatsapp"></i>
