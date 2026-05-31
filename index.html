@@ -128,6 +128,7 @@ body {
 .nav-logo {
   display: flex;
   align-items: center;
+  gap: 10px;
   text-decoration: none;
 }
 .nav-logo-img {
@@ -135,6 +136,14 @@ body {
   width: auto;
   object-fit: contain;
 }
+.logo-text { 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
+.logo-title { font-size: 14px; font-weight: 700; color: var(--green); line-height: 1.2; }
+.logo-sub { font-size: 10px; color: var(--gray-400); font-weight: 400; }
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -1340,14 +1349,20 @@ body {
   margin-bottom: 48px;
 }
 .footer-logo {
-  display: flex; flex-direction: column; align-items: flex-start;
-  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 16px; flex-direction: row;
 }
 .footer-logo-img {
-  height: 48px;
+  height: 42px;
   width: auto;
   object-fit: contain;
-  margin-bottom: 12px;
+  margin-bottom: 0;
+}
+.footer-logo-text {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
 }
 .footer-tagline {
   font-size: 13px;
@@ -1435,11 +1450,19 @@ body {
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-bg-shape { display: none; }
   .hero-left { padding: 80px 5% 40px; max-width: 100%; }
-  .hero-right { display: none; }
+  
+  /* Memunculkan gambar hero di Tablet/HP */
+  .hero-right { 
+    display: flex; 
+    padding: 0 5% 60px; 
+    min-height: auto; 
+    justify-content: center;
+  }
+  
   .stats-grid { grid-template-columns: repeat(2,1fr); }
   .stat-card:nth-child(2) { border-right: none; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
-  .about-img-wrap { max-width: 480px; }
+  .about-img-wrap { max-width: 480px; margin: 0 auto; }
   .pengasuh-inner { grid-template-columns: 1fr; gap: 48px; }
   .pengasuh-img-col { order: -1; }
   .pengasuh-img-frame { max-width: 320px; margin: 0 auto; }
@@ -1449,6 +1472,7 @@ body {
   .kontak-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
+
 @media (max-width: 768px) {
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
@@ -1462,10 +1486,19 @@ body {
   .biaya-intro { flex-direction: column; text-align: center; gap: 8px; }
   .fac-grid { grid-template-columns: 1fr; }
   .gallery-item { width: 260px; height: 180px; }
-  .hero-card-float { display: none; }
+  
+  /* Menyesuaikan kartu melayang di layar HP */
+  .hero-card-float { padding: 10px 12px; }
+  .card-icon { width: 28px; height: 28px; font-size: 12px; }
+  .card-label { font-size: 9px; }
+  .card-value { font-size: 12px; }
+  .hero-card-float.top-left { top: 10px; left: -10px; }
+  .hero-card-float.bottom-right { bottom: 20px; right: -10px; }
+  
   .footer-top { grid-template-columns: 1fr; gap: 28px; }
   .footer-social { width: 32px; height: 32px; font-size: 12px; }
 }
+
 @media (max-width: 480px) {
   .hero-title { font-size: 30px; }
   .hero-stats { flex-wrap: wrap; }
@@ -1483,6 +1516,10 @@ body {
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/logo-pondok-png%20(3).png" alt="Logo PP Mambaus Sholihin" class="nav-logo-img">
+      <div class="logo-text">
+        <span class="logo-title">PP. Mambaus Sholihin</span>
+        <span class="logo-sub">Litahfidz Al-Qur'an Malang</span>
+      </div>
     </a>
     <ul class="nav-links">
       <li><a href="#beranda" class="nav-link active">Beranda</a></li>
@@ -1535,7 +1572,7 @@ body {
     </div>
     <div class="hero-stats">
       <div class="hero-stat-item">
-        <div class="hero-stat-num"><span class="counter-hero" data-target="25">0</span><span>+</span></div>
+        <div class="hero-stat-num"><span class="counter-hero" data-target="42">0</span></div>
         <div class="hero-stat-label">Santri Aktif</div>
       </div>
       <div class="hero-stat-item">
@@ -1543,7 +1580,7 @@ body {
         <div class="hero-stat-label">Alumni</div>
       </div>
       <div class="hero-stat-item">
-        <div class="hero-stat-num"><span class="counter-hero" data-target="15">0</span><span>+</span></div>
+        <div class="hero-stat-num"><span class="counter-hero" data-target="15">0</span></div>
         <div class="hero-stat-label">Hafidz 30 Juz</div>
       </div>
     </div>
@@ -1597,11 +1634,11 @@ body {
 <section class="stats-section">
   <div class="stats-grid">
     <div class="stat-card reveal">
-      <div class="stat-num"><span class="counter" data-target="25">0</span><span style="color:var(--green)">+</span></div>
+      <div class="stat-num"><span class="counter" data-target="25">0</span></div>
       <div class="stat-label">Santri Pesantren</div>
     </div>
     <div class="stat-card reveal delay-1">
-      <div class="stat-num"><span class="counter" data-target="16">0</span><span style="color:var(--green)">+</span></div>
+      <div class="stat-num"><span class="counter" data-target="16">0</span></div>
       <div class="stat-label">Santri Muhajirin</div>
     </div>
     <div class="stat-card reveal delay-2">
@@ -1609,7 +1646,7 @@ body {
       <div class="stat-label">Alumni</div>
     </div>
     <div class="stat-card reveal delay-3">
-      <div class="stat-num"><span class="counter" data-target="15">0</span><span style="color:var(--green)">+</span></div>
+      <div class="stat-num"><span class="counter" data-target="15">0</span></div>
       <div class="stat-label">Hafidz 30 Juz</div>
     </div>
   </div>
@@ -1974,6 +2011,7 @@ body {
       <div>
         <div class="footer-logo">
           <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/logo-pondok-png%20(3).png" alt="Logo PP Mambaus Sholihin" class="footer-logo-img">
+          <div class="footer-logo-text">PP. Mambaus Sholihin<br><span style="font-size:10px;opacity:.6;font-weight:400">Litahfidz Al-Qur'an Malang</span></div>
         </div>
         <p class="footer-tagline">Hafidz Al-Qur'an · Alim<br>Sholih · Kafi</p>
         <div class="footer-socials">
