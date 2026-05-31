@@ -128,21 +128,13 @@ body {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
 }
-.logo-mark {
-  width: 38px; height: 38px;
-  background: var(--green);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 10px; font-weight: 700; color: var(--white);
-  letter-spacing: -0.3px;
-  flex-shrink: 0;
+.nav-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
 }
-.logo-text { display: flex; flex-direction: column; }
-.logo-title { font-size: 13px; font-weight: 700; color: var(--green); line-height: 1.2; }
-.logo-sub { font-size: 9px; color: var(--gray-400); font-weight: 400; }
 .nav-links {
   display: flex;
   align-items: center;
@@ -686,7 +678,21 @@ body {
 .pengasuh-section .section-label { color: var(--gold); }
 .pengasuh-section .section-label::before { background: var(--gold); }
 .pengasuh-section .section-title { color: var(--white); }
-.pengasuh-section .section-body { color: rgba(255,255,255,0.7); }
+.pengasuh-name-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-top: 16px;
+  line-height: 1.3;
+}
+.sub-heading-pengasuh {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  opacity: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 .quote-block {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
@@ -716,7 +722,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 28px;
+  margin-top: 16px;
 }
 .edu-item {
   display: flex;
@@ -737,7 +743,7 @@ body {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 24px;
+  margin-top: 12px;
 }
 .guru-tag {
   padding: 7px 14px;
@@ -1334,20 +1340,14 @@ body {
   margin-bottom: 48px;
 }
 .footer-logo {
-  display: flex; align-items: center; gap: 10px;
+  display: flex; flex-direction: column; align-items: flex-start;
   margin-bottom: 16px;
 }
-.footer-logo-mark {
-  width: 36px; height: 36px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 9px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 9px; font-weight: 700; color: var(--white);
-}
-.footer-logo-text {
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.2;
+.footer-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 12px;
 }
 .footer-tagline {
   font-size: 13px;
@@ -1478,14 +1478,11 @@ body {
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <div class="logo-mark">MBS</div>
-      <div class="logo-text">
-        <span class="logo-title">PP. Mambaus Sholihin</span>
-        <span class="logo-sub">Litahfidz Al-Qur'an Malang</span>
-      </div>
+      <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/logo-pondok-png%20(3).png" alt="Logo PP Mambaus Sholihin" class="nav-logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="#beranda" class="nav-link active">Beranda</a></li>
@@ -1515,10 +1512,11 @@ body {
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="beranda">
   <div class="hero-bg-shape"></div>
   <div class="hero-left">
-    <div class="hero-badge">Pondok Pesantren · Berdiri 2018</div>
+    <div class="hero-badge">Assalamu'alaikum!</div>
     <h1 class="hero-title">
       Mambaus Sholihin<br>
       <em>Litahfidz</em><br>
@@ -1559,7 +1557,7 @@ body {
         <div class="card-icon"><i class="fas fa-book-open"></i></div>
         <div class="card-text-wrap">
           <div class="card-label">Program Unggulan</div>
-          <div class="card-value">Tahfidz Al-Qur'an</div>
+          <div class="card-value">Tahsin dan Tahfidz Al-Qur'an</div>
         </div>
       </div>
       <div class="hero-card-float bottom-right">
@@ -1573,6 +1571,7 @@ body {
   </div>
 </section>
 
+<!-- MARQUEE -->
 <div class="marquee-section" aria-hidden="true">
   <div class="marquee-track">
     <div class="marquee-item"><span class="marquee-dot"></span>Tahfidz Al-Qur'an 30 Juz</div>
@@ -1594,6 +1593,7 @@ body {
   </div>
 </div>
 
+<!-- STATS -->
 <section class="stats-section">
   <div class="stats-grid">
     <div class="stat-card reveal">
@@ -1615,6 +1615,7 @@ body {
   </div>
 </section>
 
+<!-- PROFIL -->
 <section class="section" id="profil">
   <div class="section-inner">
     <div class="about-grid">
@@ -1636,7 +1637,7 @@ body {
         <div class="visi-block">
           <p>"Mencetak generasi santri penghafal Al-Quran yang alim, sholih, dan kafi"</p>
         </div>
-        <p class="section-body">Pondok Pesantren Mambaus Sholihin Litahfidz Al-Qur'an Malang adalah pesantren semi modern yang berfokus pada hafalan Al-Qur'an dan penanaman karakter melalui kajian-kajian kitab, wirid harian, khidmah, dan sholat berjamaah. Didirikan oleh Prof. Dr. KH. Nasrulloh, Lc., M.Th.I pada tahun 2018.</p>
+        <p class="section-body" style="text-align: justify; hyphens: auto;">Pondok Pesantren Mambaus Sholihin Litahfidz Al-Qur'an Malang adalah pesantren semi modern yang berfokus pada hafalan Al-Qur'an dan penanaman karakter melalui kajian-kajian kitab, wirid harian, khidmah, dan sholat berjamaah. Didirikan oleh Prof. Dr. KH. Nasrulloh, Lc., M.Th.I pada tahun 2018.</p>
         <div class="about-features">
           <div class="feature-tag"><span class="dot"></span>Talaqqi Al-Qur'an bersanad kepada Syaikh Mahir al-Munajjid</div>
           <div class="feature-tag"><span class="dot"></span>Pengajaran kitab turots dan kajian Islam kontemporer</div>
@@ -1652,16 +1653,19 @@ body {
   </div>
 </section>
 
+<!-- PENGASUH -->
 <section class="pengasuh-section" id="pengasuh">
   <div class="pengasuh-inner">
     <div class="reveal">
       <p class="section-label">Pimpinan Pesantren</p>
       <h2 class="section-title">Profil<br><em style="font-family:'Playfair Display',serif;font-style:italic;">Pengasuh</em></h2>
-      <p class="section-body" style="margin-top:16px">Prof. Dr. KH. Nasrulloh, Lc., M.Th.I — Pendiri dan Pengasuh PP. Mambaus Sholihin. Guru Besar Bidang Ilmu Hadis UIN Malang (2025).</p>
+      <h3 class="pengasuh-name-title">Prof. Dr. KH. Nasrulloh, Lc., M.Th.I</h3>
       <div class="quote-block">
         <div class="quote-mark">"</div>
         <p class="quote-text">Mencari ilmu adalah syarat utama untuk bisa sampai kepada Allah SWT</p>
       </div>
+      
+      <h4 class="sub-heading-pengasuh" style="margin-top: 32px; margin-bottom: 4px;">Riwayat Pendidikan</h4>
       <div class="edu-list">
         <div class="edu-item">PP. Mambaus Sholihin, Gresik (1995–2001)</div>
         <div class="edu-item">Dirasah Islamiyah, Mujamma' Syaikh Ahmad Kaftaru, Suriah (2001–2005)</div>
@@ -1670,6 +1674,8 @@ body {
         <div class="edu-item">Doktor Dirasah Islamiyah, UIN Sunan Ampel Surabaya (2010–2014)</div>
         <div class="edu-item">Guru Besar Bidang Ilmu Hadis (2025)</div>
       </div>
+      
+      <h4 class="sub-heading-pengasuh" style="margin-top: 24px; margin-bottom: 4px;">Guru Beliau</h4>
       <div class="guru-tags">
         <div class="guru-tag">Romo KH. Masbuhin Faqih</div>
         <div class="guru-tag">Syekh Mahir Al-Munajjid</div>
@@ -1687,6 +1693,7 @@ body {
   </div>
 </section>
 
+<!-- PROGRAM -->
 <section class="section programs-section" id="program">
   <div class="section-inner">
     <div class="programs-header">
@@ -1736,6 +1743,7 @@ body {
   </div>
 </section>
 
+<!-- GALLERY -->
 <section class="section gallery-section" id="kegiatan">
   <div class="section-inner">
     <div class="gallery-header reveal">
@@ -1757,6 +1765,7 @@ body {
   </div>
 </section>
 
+<!-- FASILITAS -->
 <section class="section fac-section" id="fasilitas">
   <div class="section-inner">
     <div style="text-align:center;margin-bottom:48px" class="reveal">
@@ -1806,6 +1815,7 @@ body {
   </div>
 </section>
 
+<!-- SANTRI -->
 <section class="section santri-section" id="santri">
   <div class="section-inner">
     <div style="text-align:center;margin-bottom:48px" class="reveal">
@@ -1834,6 +1844,7 @@ body {
   </div>
 </section>
 
+<!-- QRIS MODAL -->
 <div class="modal-overlay" id="qrisModal" onclick="closeQris(event)">
   <div class="modal-box">
     <button class="modal-close" onclick="closeQris(null, true)">✕</button>
@@ -1845,6 +1856,7 @@ body {
   </div>
 </div>
 
+<!-- BIAYA -->
 <section class="section biaya-section" id="biaya">
   <div class="section-inner">
     <div class="biaya-header reveal">
@@ -1893,6 +1905,7 @@ body {
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner reveal">
     <div class="cta-badge">Penerimaan Santri Baru</div>
@@ -1902,6 +1915,7 @@ body {
   </div>
 </section>
 
+<!-- KONTAK -->
 <section class="section kontak-section" id="kontak">
   <div class="section-inner">
     <div style="text-align:center;margin-bottom:48px" class="reveal">
@@ -1953,13 +1967,13 @@ body {
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-top">
       <div>
         <div class="footer-logo">
-          <div class="footer-logo-mark">MBS</div>
-          <div class="footer-logo-text">PP. Mambaus Sholihin<br><span style="font-size:10px;opacity:.6;font-weight:400">Litahfidz Al-Qur'an Malang</span></div>
+          <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/logo-pondok-png%20(3).png" alt="Logo PP Mambaus Sholihin" class="footer-logo-img">
         </div>
         <p class="footer-tagline">Hafidz Al-Qur'an · Alim<br>Sholih · Kafi</p>
         <div class="footer-socials">
@@ -2002,6 +2016,7 @@ body {
   </div>
 </footer>
 
+<!-- WA FLOAT -->
 <a href="https://wa.me/6282257508018" target="_blank" class="wa-float" id="waFloat" title="Chat WhatsApp">
   <div class="pulse"></div>
   <i class="fab fa-whatsapp"></i>
@@ -2085,32 +2100,52 @@ function closeQris(e, force) {
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('qrisModal').classList.remove('open'); });
 
-// ── Gallery slider drag
+// ── Gallery slider drag & Auto Scroll Kiri (Smooth)
 const slider = document.getElementById('gallerySlider');
 let isDragging = false, startX = 0, scrollStart = 0;
-slider.addEventListener('mousedown', e => { isDragging = true; startX = e.pageX - slider.offsetLeft; scrollStart = slider.scrollLeft; slider.style.cursor = 'grabbing'; });
-slider.addEventListener('mouseleave', () => { isDragging = false; slider.style.cursor = 'grab'; });
-slider.addEventListener('mouseup', () => { isDragging = false; slider.style.cursor = 'grab'; });
+let autoScrollId;
+
+slider.addEventListener('mousedown', e => { 
+  isDragging = true; 
+  startX = e.pageX - slider.offsetLeft; 
+  scrollStart = slider.scrollLeft; 
+  slider.style.cursor = 'grabbing'; 
+});
+slider.addEventListener('mouseleave', () => { 
+  isDragging = false; 
+  slider.style.cursor = 'grab'; 
+  startAutoScroll();
+});
+slider.addEventListener('mouseup', () => { 
+  isDragging = false; 
+  slider.style.cursor = 'grab'; 
+  startAutoScroll();
+});
 slider.addEventListener('mousemove', e => {
   if (!isDragging) return;
   e.preventDefault();
   slider.scrollLeft = scrollStart - (e.pageX - slider.offsetLeft - startX) * 1.5;
 });
 
-// ── Auto scroll gallery
-let autoScrollId;
 function startAutoScroll() {
+  stopAutoScroll(); // Cegah duplikasi
   autoScrollId = requestAnimationFrame(function step() {
-    if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) slider.scrollLeft = 0;
-    else slider.scrollLeft += 0.8;
+    // Scroll ke arah kiri (scrollRight / menambah nilai scrollLeft)
+    if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 1) {
+      slider.scrollLeft = 0; // Kembali ke awal jika mentok
+    } else {
+      slider.scrollLeft += 1; // Kecepatan smooth
+    }
     autoScrollId = requestAnimationFrame(step);
   });
 }
 function stopAutoScroll() { cancelAnimationFrame(autoScrollId); }
+
 slider.addEventListener('mouseenter', stopAutoScroll);
-slider.addEventListener('mouseleave', startAutoScroll);
 slider.addEventListener('touchstart', stopAutoScroll, { passive: true });
 slider.addEventListener('touchend', startAutoScroll);
+
+// Mulai scroll pertama kali
 startAutoScroll();
 </script>
 </body>
