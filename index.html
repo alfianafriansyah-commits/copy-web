@@ -402,15 +402,15 @@ body {
   object-fit: cover;
   aspect-ratio: 4/5;
   background: linear-gradient(160deg, #c5d9cb 0%, #7a9e8c 100%);
-  overflow: hidden; /* Tambahkan ini agar bagian yang di-zoom tidak meluber */
+  overflow: hidden;
 }
 .hero-img-main img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: 70% center; /* Menggeser porsi gambar agar objek utama lebih ke kiri */
+  object-position: 70% center;
   display: block;
   transform: scale(1.15);
-  transform-origin: top center; /* Menyeimbangkan titik zoom dari tengah atas */
+  transform-origin: top center;
 }
 .hero-card-float {
   position: absolute;
@@ -566,14 +566,17 @@ body {
   width: 100%;
   aspect-ratio: 3/4;
   border-radius: var(--radius-lg);
-  object-fit: cover;
   display: block;
   background: linear-gradient(160deg, #c5d9cb, #7a9e8c);
+  overflow: hidden;
 }
 .about-img img {
   width: 100%; height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-lg);
+  object-position: 70% center; 
+  display: block;
+  transform: scale(1.15);
+  transform-origin: top center;
 }
 .about-badge {
   position: absolute;
@@ -744,17 +747,17 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 15px; /* Diperbesar dari sebelumnya 13.5px */
-  font-weight: 500; /* Ditambahkan agar teks agak lebih tebal (medium bold) */
-  color: rgba(255,255,255,0.85); /* Opasitas dinaikkan sedikit dari 0.75 agar lebih jelas */
+  font-size: 15px;
+  font-weight: 500; 
+  color: rgba(255,255,255,0.85); 
   line-height: 1.6;
 }
 .edu-item::before {
   content: '→';
   color: var(--gold);
-  font-size: 15px; /* Disamakan dengan ukuran teks yang baru */
+  font-size: 15px; 
   flex-shrink: 0;
-  margin-top: 2px; /* Disesuaikan marginnya agar tetap sejajar dengan teks yang membesar */
+  margin-top: 2px; 
 }
 .guru-tags {
   display: flex;
@@ -769,17 +772,15 @@ body {
   font-size: 12px;
   font-weight: 500;
   color: rgba(255,255,255,0.85);
-  text-decoration: none; /* Menghilangkan garis bawah bawaan link */
+  text-decoration: none; 
   display: inline-block;
-  transition: all 0.2s ease; /* Transisi agar efek hover halus */
+  transition: all 0.2s ease; 
 }
-
-/* Tambahkan efek ini agar pengunjung tahu itu bisa diklik */
 .guru-tag:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.5);
   color: #ffffff;
-  transform: translateY(-2px); /* Efek sedikit naik saat disentuh kursor */
+  transform: translateY(-2px); 
 }
 .pengasuh-img-col {
   display: flex;
@@ -794,17 +795,29 @@ body {
   position: relative;
   border: 2px solid rgba(255,255,255,0.15);
 }
-.pengasuh-img-frame img {
+
+/* CSS UPDATE UNTUK SLIDESHOW PENGASUH */
+.pengasuh-img-frame .slide-img {
+  position: absolute; 
+  top: 0; left: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center top;
-  display: block;
+  opacity: 0; 
+  transition: opacity 1s ease-in-out; 
+  z-index: 1;
 }
+.pengasuh-img-frame .slide-img.active {
+  opacity: 1; 
+  z-index: 2;
+}
+
 .pengasuh-img-overlay {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   background: linear-gradient(to top, rgba(10,35,22,0.9), transparent);
   padding: 24px 20px 20px;
+  z-index: 10;
 }
 .pengasuh-name {
   font-size: 14px;
@@ -1200,10 +1213,10 @@ body {
 }
 .biaya-row:last-child { border-bottom: none; }
 .biaya-desc {
-  font-size: 14.5px; /* Ukuran font diperbesar dari 13px */
-  font-weight: 500; /* Ditambahkan agar teks agak lebih tebal (Medium) */
-  color: var(--gray-900); /* Warna dipergelap dari sebelumnya abu-abu agar lebih kontras dan jelas */
-  line-height: 1.5; /* Jarak antar baris sedikit dilonggarkan agar lebih rapi */
+  font-size: 14.5px;
+  font-weight: 500; 
+  color: var(--gray-900); 
+  line-height: 1.5; 
 }
 .biaya-price {
   font-size: 13.5px;
@@ -1673,7 +1686,7 @@ body {
   </div>
 </section>
 
-<!-- PROFIL -->
+<!-- PROFIL / ABOUT -->
 <section class="section" id="profil">
   <div class="section-inner">
     <div class="about-grid">
@@ -1740,8 +1753,13 @@ body {
       </div>
     </div>
     <div class="pengasuh-img-col reveal delay-2">
-      <div class="pengasuh-img-frame">
-        <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/buya-ori.jpg" alt="Prof. Dr. KH. Nasrulloh, Lc., M.Th.I">
+      <div class="pengasuh-img-frame" id="pengasuhSlideshow">
+        
+        <!-- Gambar Slideshow Pengasuh (Silakan ubah link gambarnya sesuai kebutuhan) -->
+        <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/buya-ori.jpg" alt="Prof. Dr. KH. Nasrulloh, Lc., M.Th.I" class="slide-img active">
+        <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/kegiatan1.jpg" alt="Foto Pengasuh 2" class="slide-img">
+        <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/kegiatan2.png" alt="Foto Pengasuh 3" class="slide-img">
+        
         <div class="pengasuh-img-overlay">
           <div class="pengasuh-name">Prof. Dr. KH. Nasrulloh, Lc., M.Th.I.</div>
           <div class="pengasuh-title">Pengasuh & Pendiri</div>
@@ -1873,7 +1891,7 @@ body {
   </div>
 </section>
 
-<!-- SANTRI -->
+<!-- SANTRI SECTION -->
 <section class="section santri-section" id="santri">
   <div class="section-inner">
     <div style="text-align:center;margin-bottom:48px" class="reveal">
@@ -2206,6 +2224,23 @@ slider.addEventListener('touchend', startAutoScroll);
 
 // Mulai scroll pertama kali
 startAutoScroll();
+
+// ── Pengasuh Slideshow (Fade)
+const pengasuhSlides = document.querySelectorAll('#pengasuhSlideshow .slide-img');
+let currentPengasuhSlide = 0;
+
+if (pengasuhSlides.length > 1) {
+  setInterval(() => {
+    // Hilangkan class active dari gambar saat ini
+    pengasuhSlides[currentPengasuhSlide].classList.remove('active');
+    
+    // Pindah ke gambar selanjutnya (kembali ke 0 jika sudah di gambar terakhir)
+    currentPengasuhSlide = (currentPengasuhSlide + 1) % pengasuhSlides.length;
+    
+    // Tambahkan class active ke gambar baru
+    pengasuhSlides[currentPengasuhSlide].classList.add('active');
+  }, 3000); // Ganti gambar setiap 3 detik
+}
 </script>
 </body>
 </html>
