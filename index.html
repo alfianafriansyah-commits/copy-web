@@ -766,6 +766,17 @@ body {
   font-size: 12px;
   font-weight: 500;
   color: rgba(255,255,255,0.85);
+  text-decoration: none; /* Menghilangkan garis bawah bawaan link */
+  display: inline-block;
+  transition: all 0.2s ease; /* Transisi agar efek hover halus */
+}
+
+/* Tambahkan efek ini agar pengunjung tahu itu bisa diklik */
+.guru-tag:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  transform: translateY(-2px); /* Efek sedikit naik saat disentuh kursor */
 }
 .pengasuh-img-col {
   display: flex;
@@ -1717,8 +1728,8 @@ body {
       
       <h4 class="sub-heading-pengasuh" style="margin-top: 24px; margin-bottom: 4px;">Guru Beliau</h4>
       <div class="guru-tags">
-        <div class="guru-tag">Romo KH. Masbuhin Faqih</div>
-        <div class="guru-tag">Syekh Mahir Al-Munajjid</div>
+        <a href="https://www.google.com/search?q=Romo+KH.+Masbuhin+Faqih" target="_blank" class="guru-tag">Romo KH. Masbuhin Faqih</a>
+        <a href="https://www.google.com/search?q=Syekh+Mahir+Al-Munajjid" target="_blank" class="guru-tag">Syaikh Mahir Al-Munajjid</a>
       </div>
     </div>
     <div class="pengasuh-img-col reveal delay-2">
