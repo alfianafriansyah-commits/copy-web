@@ -813,9 +813,51 @@ body {
   box-shadow: 0 4px 12px rgba(26,71,49,0.15); /* Menambah efek melayang */
 }
 
+/* Update kolom untuk menyusun foto dan tombol dari atas ke bawah */
 .pengasuh-img-col {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Mengubah susunan menjadi vertikal */
+  align-items: center;    /* Memastikan tombol berada tepat di tengah */
+  gap: 24px;              /* Memberi jarak antara foto dan tombol */
+}
+
+/* ── STYLE & ANIMASI TOMBOL YOUTUBE ── */
+.btn-profil-youtube {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #cc0000; /* Warna khas merah YouTube */
+  color: var(--white);
+  padding: 12px 28px;
+  border-radius: var(--radius-xl);
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(204, 0, 0, 0.25);
+  animation: floatSmooth 2.5s ease-in-out infinite; /* Animasi smooth yang tidak kasar */
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.btn-profil-youtube i {
+  font-size: 18px;
+}
+
+/* Efek ketika tombol disorot kursor */
+.btn-profil-youtube:hover {
+  background: #a30000;
+  animation-play-state: paused; /* Menghentikan animasi saat disorot */
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(204, 0, 0, 0.4);
+}
+
+/* Keyframes untuk gerakan naik turun yang super halus */
+@keyframes floatSmooth {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px); /* Hanya bergerak sejauh 6px ke atas secara perlahan */
+  }
 }
 
 .pengasuh-img-frame {
@@ -1790,16 +1832,22 @@ body {
     <div class="pengasuh-img-col reveal delay-2">
       <div class="pengasuh-img-frame" id="pengasuhSlideshow">
         
-        <!-- Gambar Slideshow Pengasuh (Silakan ubah link gambarnya sesuai kebutuhan) -->
+        <!-- Gambar Slideshow Pengasuh -->
         <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/buya-ori.jpg" alt="Prof. Dr. KH. Nasrulloh, Lc., M.Th.I" class="slide-img active">
-        <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/DSC09054.jpg" alt="Foto Pengasuh 2" class="slide-img">
-        <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/IMG_6136.JPG" alt="Foto Pengasuh 3" class="slide-img">
+        <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/kegiatan1.jpg" alt="Foto Pengasuh 2" class="slide-img">
+        <img src="https://raw.githubusercontent.com/alfianafriansyah-commits/ppmbsmalang/main/kegiatan2.png" alt="Foto Pengasuh 3" class="slide-img">
         
         <div class="pengasuh-img-overlay">
           <div class="pengasuh-name">Prof. Dr. KH. Nasrulloh, Lc., M.Th.I.</div>
           <div class="pengasuh-title">Pengasuh & Pendiri</div>
         </div>
       </div>
+      
+      <!-- TOMBOL PROFIL YOUTUBE -->
+      <a href="https://youtu.be/TlAGBwM3pMc?si=EAyAxS62aHBQU3yr" target="_blank" class="btn-profil-youtube">
+        <i class="fab fa-youtube"></i> Tonton Profil Lengkap
+      </a>
+      
     </div>
   </div>
 </section>
