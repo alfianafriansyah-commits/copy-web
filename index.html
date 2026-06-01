@@ -407,10 +407,10 @@ body {
 .hero-img-main img {
   width: 100%; height: 100%;
   object-fit: cover;
-  /* Hapus border-radius di sini karena sudah di-handle oleh parent-nya */
+  object-position: 70% center; /* Menggeser porsi gambar agar objek utama lebih ke kiri */
   display: block;
-  transform: scale(1.15); /* Zoom gambar sebesar 15% */
-  transform-origin: top left; /* Fokuskan zoom dari ujung kiri atas, sehingga area kanan bawah terdorong keluar/terpotong */
+  transform: scale(1.15);
+  transform-origin: top center; /* Menyeimbangkan titik zoom dari tengah atas */
 }
 .hero-card-float {
   position: absolute;
