@@ -662,18 +662,20 @@ body {
 
 /* ── PENGASUH ── */
 .pengasuh-section {
-  background: var(--green);
-  color: var(--white);
+  background: var(--green-xlight); /* Mengubah latar belakang menjadi hijau sangat muda/cerah */
+  color: var(--gray-900); 
   padding: 96px 5%;
   overflow: hidden;
   position: relative;
 }
+
+/* Dekorasi lingkaran latar belakang */
 .pengasuh-section::before {
   content: '';
   position: absolute;
   top: -80px; right: -80px;
   width: 400px; height: 400px;
-  background: rgba(255,255,255,0.03);
+  background: rgba(26, 71, 49, 0.04); /* Menyesuaikan dekorasi agar lebih soft */
   border-radius: 50%;
 }
 .pengasuh-section::after {
@@ -681,9 +683,10 @@ body {
   position: absolute;
   bottom: -120px; left: -60px;
   width: 300px; height: 300px;
-  background: rgba(255,255,255,0.03);
+  background: rgba(26, 71, 49, 0.04);
   border-radius: 50%;
 }
+
 .pengasuh-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -694,64 +697,86 @@ body {
   gap: 80px;
   align-items: center;
 }
-.pengasuh-section .section-label { color: var(--gold); }
-.pengasuh-section .section-label::before { background: var(--gold); }
-.pengasuh-section .section-title { color: var(--white); }
+
+.pengasuh-section .section-label { color: var(--green); }
+.pengasuh-section .section-label::before { background: var(--green); }
+.pengasuh-section .section-title { color: var(--gray-900); } /* Judul jadi warna gelap */
+
+/* ── ANIMATED TEXT UNTUK NAMA PENGASUH ── */
 .pengasuh-name-title {
   font-size: 26px;
   font-weight: 700;
-  color: var(--gold-light);
-  margin-top: 4px; /* Ukuran ini dikecilkan dari 16px agar posisinya naik merapat ke judul */
+  margin-top: 4px;
   line-height: 1.3;
+  /* Membuat gradasi dan animasi kilau */
+  background: linear-gradient(to right, var(--green) 20%, var(--gold) 40%, var(--gold) 60%, var(--green) 80%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shineText 3s linear infinite;
 }
+
+@keyframes shineText {
+  to {
+    background-position: 200% center;
+  }
+}
+
 .sub-heading-pengasuh {
   font-size: 15px;
   font-weight: 700;
-  color: var(--white);
-  opacity: 0.95;
+  color: var(--green); /* Warna subheading jadi hijau khas pesantren */
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
 .quote-block {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--white); /* Latar kotak kutipan jadi putih */
+  border: 1px solid var(--green-light);
+  box-shadow: var(--shadow-sm); /* Tambahan bayangan lembut */
   border-radius: var(--radius-md);
   padding: 24px 28px;
   margin-top: 28px;
   position: relative;
 }
+
 .quote-mark {
   font-size: 64px;
   line-height: 0.5;
-  color: var(--gold);
-  opacity: 0.5;
+  color: var(--green-light);
+  opacity: 0.8;
   font-family: Georgia, serif;
   position: absolute;
   top: 18px; left: 20px;
 }
+
 .quote-text {
   font-size: 16px;
   font-style: italic;
-  font-family: 'DM Sans', sans-serif; /* Diubah dari serif ke sans-serif */
-  color: rgba(255,255,255,0.9);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--gray-600); /* Teks abu-abu agar mudah dibaca di latar cerah */
   line-height: 1.65;
   padding-left: 28px;
 }
+
 .edu-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 16px;
 }
+
 .edu-item {
   display: flex;
   align-items: flex-start;
   gap: 10px;
   font-size: 15px;
   font-weight: 500; 
-  color: rgba(255,255,255,0.85); 
+  color: var(--gray-600); /* Warna teks disesuaikan */
   line-height: 1.6;
 }
+
 .edu-item::before {
   content: '→';
   color: var(--gold);
@@ -759,33 +784,40 @@ body {
   flex-shrink: 0;
   margin-top: 2px; 
 }
+
 .guru-tags {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
   margin-top: 12px;
 }
+
 .guru-tag {
   padding: 7px 14px;
-  border: 1px solid rgba(255,255,255,0.2);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
   border-radius: 100px;
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  color: var(--gray-600);
   text-decoration: none; 
   display: inline-block;
   transition: all 0.2s ease; 
 }
+
 .guru-tag:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
   transform: translateY(-2px); 
+  box-shadow: 0 4px 12px rgba(26,71,49,0.15); /* Menambah efek melayang */
 }
+
 .pengasuh-img-col {
   display: flex;
   justify-content: center;
 }
+
 .pengasuh-img-frame {
   width: 100%;
   max-width: 380px;
@@ -793,10 +825,11 @@ body {
   border-radius: var(--radius-lg);
   overflow: hidden;
   position: relative;
-  border: 2px solid rgba(255,255,255,0.15);
+  border: 4px solid var(--white); /* Bingkai foto diubah jadi putih solid */
+  box-shadow: var(--shadow-md); /* Tambah bayangan di sekitar bingkai */
 }
 
-/* CSS UPDATE UNTUK SLIDESHOW PENGASUH */
+/* ── SLIDESHOW PENGASUH ── */
 .pengasuh-img-frame .slide-img {
   position: absolute; 
   top: 0; left: 0;
@@ -819,11 +852,13 @@ body {
   padding: 24px 20px 20px;
   z-index: 10;
 }
+
 .pengasuh-name {
   font-size: 14px;
   font-weight: 700;
   color: var(--white);
 }
+
 .pengasuh-title {
   font-size: 11px;
   color: var(--gold);
