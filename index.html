@@ -402,12 +402,15 @@ body {
   object-fit: cover;
   aspect-ratio: 4/5;
   background: linear-gradient(160deg, #c5d9cb 0%, #7a9e8c 100%);
+  overflow: hidden; /* Tambahkan ini agar bagian yang di-zoom tidak meluber */
 }
 .hero-img-main img {
   width: 100%; height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-lg);
+  /* Hapus border-radius di sini karena sudah di-handle oleh parent-nya */
   display: block;
+  transform: scale(1.15); /* Zoom gambar sebesar 15% */
+  transform-origin: top left; /* Fokuskan zoom dari ujung kiri atas, sehingga area kanan bawah terdorong keluar/terpotong */
 }
 .hero-card-float {
   position: absolute;
@@ -1574,7 +1577,10 @@ body {
       <em>Litahfidz</em><br>
       Al-Qur'an Malang
     </h1>
-    <p class="hero-tagline">Membentuk generasi penghafal Al-Qur'an yang berilmu, berakhlaqul karimah, dan berdaya saing. Hafidz · Alim · Sholih · Kafi.</p>
+    <p class="hero-tagline">
+  Membentuk generasi penghafal Al-Qur'an yang berilmu, berakhlaqul karimah, dan berdaya saing.
+  <span style="display: block; margin-top: 12px; font-weight: 700; color: var(--gray-900);">Hafidz Al-Qur'an · Alim · Sholih · Kafi.</span>
+</p>
     <div class="hero-actions">
       <a href="https://forms.gle/6f588NJ7qScJtDXp6" target="_blank" class="btn-primary">
         Daftar Sekarang
