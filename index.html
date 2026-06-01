@@ -599,7 +599,7 @@ body {
 .about-badge-ring {
   position: absolute;
   inset: 8px;
-  border: 1px dashed var(--white); /* Diubah dari var(--gold) menjadi var(--white) */
+  border: 1px dashed var(--white);
   border-radius: 50%;
   animation: spin-slow 15s linear infinite;
 }
@@ -662,20 +662,19 @@ body {
 
 /* ── PENGASUH ── */
 .pengasuh-section {
-  background: var(--green-xlight); /* Mengubah latar belakang menjadi hijau sangat muda/cerah */
+  background: var(--green-xlight);
   color: var(--gray-900); 
   padding: 96px 5%;
   overflow: hidden;
   position: relative;
 }
 
-/* Dekorasi lingkaran latar belakang */
 .pengasuh-section::before {
   content: '';
   position: absolute;
   top: -80px; right: -80px;
   width: 400px; height: 400px;
-  background: rgba(26, 71, 49, 0.04); /* Menyesuaikan dekorasi agar lebih soft */
+  background: rgba(26, 71, 49, 0.04);
   border-radius: 50%;
 }
 .pengasuh-section::after {
@@ -700,7 +699,7 @@ body {
 
 .pengasuh-section .section-label { color: var(--green); }
 .pengasuh-section .section-label::before { background: var(--green); }
-.pengasuh-section .section-title { color: var(--gray-900); } /* Judul jadi warna gelap */
+.pengasuh-section .section-title { color: var(--gray-900); }
 
 /* ── ANIMATED TEXT UNTUK NAMA PENGASUH ── */
 .pengasuh-name-title {
@@ -708,7 +707,6 @@ body {
   font-weight: 700;
   margin-top: 4px;
   line-height: 1.3;
-  /* Membuat gradasi dan animasi kilau */
   background: linear-gradient(to right, var(--green) 20%, var(--gold) 40%, var(--gold) 60%, var(--green) 80%);
   background-size: 200% auto;
   color: transparent;
@@ -718,23 +716,21 @@ body {
 }
 
 @keyframes shineText {
-  to {
-    background-position: 200% center;
-  }
+  to { background-position: 200% center; }
 }
 
 .sub-heading-pengasuh {
   font-size: 15px;
   font-weight: 700;
-  color: var(--green); /* Warna subheading jadi hijau khas pesantren */
+  color: var(--green);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .quote-block {
-  background: var(--white); /* Latar kotak kutipan jadi putih */
+  background: var(--white);
   border: 1px solid var(--green-light);
-  box-shadow: var(--shadow-sm); /* Tambahan bayangan lembut */
+  box-shadow: var(--shadow-sm);
   border-radius: var(--radius-md);
   padding: 24px 28px;
   margin-top: 28px;
@@ -755,7 +751,7 @@ body {
   font-size: 16px;
   font-style: italic;
   font-family: 'DM Sans', sans-serif;
-  color: var(--gray-600); /* Teks abu-abu agar mudah dibaca di latar cerah */
+  color: var(--gray-600);
   line-height: 1.65;
   padding-left: 28px;
 }
@@ -773,7 +769,7 @@ body {
   gap: 10px;
   font-size: 15px;
   font-weight: 500; 
-  color: var(--gray-600); /* Warna teks disesuaikan */
+  color: var(--gray-600);
   line-height: 1.6;
 }
 
@@ -810,54 +806,48 @@ body {
   border-color: var(--green);
   color: var(--white);
   transform: translateY(-2px); 
-  box-shadow: 0 4px 12px rgba(26,71,49,0.15); /* Menambah efek melayang */
+  box-shadow: 0 4px 12px rgba(26,71,49,0.15);
 }
 
-/* Update kolom untuk menyusun foto dan tombol dari atas ke bawah */
 .pengasuh-img-col {
   display: flex;
-  flex-direction: column; /* Mengubah susunan menjadi vertikal */
-  align-items: center;    /* Memastikan tombol berada tepat di tengah */
-  gap: 24px;              /* Memberi jarak antara foto dan tombol */
+  flex-direction: column;
+  align-items: center;   
+  gap: 24px;             
 }
 
-/* ── STYLE & ANIMASI TOMBOL YOUTUBE ── */
+/* ── STYLE REVISI & ANIMASI TOMBOL YOUTUBE GREEN ── */
 .btn-profil-youtube {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #cc0000; /* Warna khas merah YouTube */
+  background: var(--green); 
   color: var(--white);
   padding: 12px 28px;
   border-radius: var(--radius-xl);
   font-size: 14.5px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(204, 0, 0, 0.25);
-  animation: floatSmooth 2.5s ease-in-out infinite; /* Animasi smooth yang tidak kasar */
+  box-shadow: 0 4px 15px rgba(26, 71, 49, 0.25);
+  animation: floatSmooth 2.5s ease-in-out infinite; 
   transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .btn-profil-youtube i {
   font-size: 18px;
+  color: var(--white); /* Memastikan Ikon YouTube Putih */
 }
 
-/* Efek ketika tombol disorot kursor */
 .btn-profil-youtube:hover {
-  background: #a30000;
-  animation-play-state: paused; /* Menghentikan animasi saat disorot */
+  background: var(--green-dark);
+  animation-play-state: paused; 
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 20px rgba(204, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(26, 71, 49, 0.4);
 }
 
-/* Keyframes untuk gerakan naik turun yang super halus */
 @keyframes floatSmooth {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px); /* Hanya bergerak sejauh 6px ke atas secara perlahan */
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 .pengasuh-img-frame {
@@ -867,11 +857,10 @@ body {
   border-radius: var(--radius-lg);
   overflow: hidden;
   position: relative;
-  border: 4px solid var(--white); /* Bingkai foto diubah jadi putih solid */
-  box-shadow: var(--shadow-md); /* Tambah bayangan di sekitar bingkai */
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow-md);
 }
 
-/* ── SLIDESHOW PENGASUH ── */
 .pengasuh-img-frame .slide-img {
   position: absolute; 
   top: 0; left: 0;
@@ -1791,11 +1780,17 @@ body {
           <div class="feature-tag"><span class="dot"></span>Pengajaran kitab turots dan kajian Islam kontemporer</div>
           <div class="feature-tag"><span class="dot"></span>Pembentukan karakter melalui wirid, dzikir, dan khidmah</div>
         </div>
-        <div style="margin-top:32px">
+        
+        <!-- REVISI 2: TOMBOL YOUTUBE PROFIL PESANTREN DI ATAS DAFTAR SEKARANG -->
+        <div style="margin-top:32px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
+          <a href="https://youtu.be/5T1MO9mIROs?si=6Vh9nQrrv6jXcK5R" target="_blank" class="btn-profil-youtube">
+            <i class="fab fa-youtube"></i> Tonton Profil Lengkap
+          </a>
           <a href="https://forms.gle/6f588NJ7qScJtDXp6" target="_blank" class="btn-primary">
             Daftar Sekarang <span class="arrow"><i class="fas fa-arrow-right"></i></span>
           </a>
         </div>
+        
       </div>
     </div>
   </div>
@@ -1843,7 +1838,7 @@ body {
         </div>
       </div>
       
-      <!-- TOMBOL PROFIL YOUTUBE -->
+      <!-- REVISI 1: TOMBOL PROFIL UTK AKUN PENGASUH (VERSI HIJAU IKON PUTIH DARI CSS) -->
       <a href="https://youtu.be/TlAGBwM3pMc?si=EAyAxS62aHBQU3yr" target="_blank" class="btn-profil-youtube">
         <i class="fab fa-youtube"></i> Tonton Profil Lengkap
       </a>
@@ -2068,7 +2063,7 @@ body {
 <section class="cta-section">
   <div class="cta-inner reveal">
     <div class="cta-badge">Penerimaan Santri Baru</div>
-    <h2 class="cta-title">Siap Menjadi<br><em>Hafidz Al-Qur'an?</em></h2>
+    <div class="cta-title">Siap Menjadi<br><em>Hafidz Al-Qur'an?</em></div>
     <p class="cta-desc">Bergabunglah bersama kami dan wujudkan impian menjadi hafidz Al-Qur'an yang alim, sholih, dan kafi.</p>
     <a href="https://forms.gle/6f588NJ7qScJtDXp6" target="_blank" class="btn-gold">Daftar Sekarang →</a>
   </div>
